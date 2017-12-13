@@ -17,7 +17,7 @@ def index(request, username = False):
     if username :
         user = User.objects.get(username = username)
         print(user)
-        context_dict    = {"product_list":products, "comments": comments, "user": user}
+        context_dict    = {"product_list":products, "comments": comments, "user": user} # you can do context_dict.update({"user":user}) here instead of repeating the entire line
 
     return render(request, 'reviews/index.html', context_dict )
 
